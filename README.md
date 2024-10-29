@@ -1,69 +1,64 @@
 # Sistema de Facturación Electrónica
 
-[![Sistema de Facturación Electrónica](https://via.placeholder.com/800x200.png?text=Sistema+de+Facturación+Electrónica)](https://github.com/Suikasama123/Sell_System)
+## Descripción
 
-## Tabla de Contenidos
-
-- [Descripción General](#descripción-general)
-- [Características Principales](#características-principales)
-- [Tecnologías Utilizadas](#tecnologías-utilizadas)
-- [Instalación y Ejecución](#instalación-y-ejecución)
-- [Uso del Sistema](#uso-del-sistema)
-  - [Inicio de Sesión y Registro](#inicio-de-sesión-y-registro)
-  - [Funciones para Vendedores](#funciones-para-vendedores)
-  - [Funciones para Clientes](#funciones-para-clientes)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Desafíos y Aprendizajes](#desafíos-y-aprendizajes)
-  - [Desafíos](#desafíos)
-  - [Aprendizajes](#aprendizajes)
-- [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
-- [Contacto](#contacto)
-- [Capturas de Pantalla](#capturas-de-pantalla)
-- [Futuras Mejoras](#futuras-mejoras)
-- [Cómo Reportar Errores](#cómo-reportar-errores)
-- [Agradecimientos](#agradecimientos)
-- [Recursos y Referencias](#recursos-y-referencias)
-
----
-
-## Descripción General
-
-El **Sistema de Facturación Electrónica** es una aplicación desarrollada en Python que permite gestionar ventas y compras, generar facturas electrónicas con códigos QR y mantener un registro de usuarios, productos y clientes. Este proyecto tiene como objetivo facilitar el proceso de facturación y gestión de inventario para pequeñas y medianas empresas.
-
-> **Nota:** Este proyecto fue desarrollado íntegramente por **Carlos Daniel Ochoa Molina** debido a problemas en la implementación de la metodología **Scrum** y la disolución del grupo de trabajo original.
-
-**Repositorio del Proyecto:** [https://github.com/Suikasama123/Sell_System](https://github.com/Suikasama123/Sell_System)
+Este repositorio contiene el código fuente y la documentación del sistema de **Facturación Electrónica** desarrollado conforme a la normativa del Servicio de Impuestos Nacionales (SIN) de Bolivia. El sistema tiene como objetivo la emisión, transmisión y almacenamiento seguro de facturas, utilizando tecnologías como XML, códigos únicos (CUIS, CUFD, CUF) y firma digital.
 
 ## Características Principales
+- **Emisión de Facturas Electrónicas** en formato XML con firma digital.
+- **Gestor de Contingencias** que permite la emisión de facturas offline y la sincronización automática una vez restablecida la conexión.
+- **Verificación mediante Código QR**, permitiendo a los clientes verificar la autenticidad de las facturas.
+- **Notificaciones Automáticas** para la renovación de los códigos CUIS y CUFD.
+- **Generación de Representación Gráfica** de las facturas en formato PDF.
 
-- **Gestión de Usuarios**: Registro e inicio de sesión para vendedores y clientes.
-- **Gestión de Productos**: Los vendedores pueden agregar, editar y visualizar productos disponibles.
-- **Proceso de Venta y Compra**: Vendedores y clientes pueden realizar ventas y compras respectivamente, agregando productos a un carrito y generando facturas.
-- **Generación de Facturas Electrónicas**: Creación de facturas detalladas con información del emisor, cliente, productos, totales, impuestos y códigos QR.
-- **Código QR**: Las facturas incluyen un código QR que contiene información relevante de la transacción.
-- **Base de Datos Integrada**: Uso de SQLite para almacenar información de usuarios, productos, clientes y facturas.
+## Estructura del Proyecto
+- **/src**: Código fuente del sistema.
+- **/docs**: Documentación del proyecto, incluyendo el informe de arquitectura y los diagramas de clases.
+- **/tests**: Pruebas unitarias e integración del sistema.
 
-## Tecnologías Utilizadas
+## Requisitos
+- **Java 11+** o **Python 3.x** para la ejecución del código fuente.
+- **MySQL** o **PostgreSQL** para la gestión de la base de datos.
+- **Vertabelo** para modelado y ajustes en la base de datos.
+- **Certificados Digitales** válidos para la firma de las facturas.
 
-- **Python 3.x**
-- **Tkinter**: Para la interfaz gráfica de usuario.
-- **SQLite**: Base de datos ligera para almacenamiento de información.
-- **Pillow (PIL)**: Manejo y manipulación de imágenes.
-- **QRCode**: Generación de códigos QR.
-- **Decimal**: Manejo preciso de valores monetarios.
-
-## Instalación y Ejecución
-
-### Requisitos Previos
-
-- **Python 3.x** instalado en el sistema.
-- **Pip** para la gestión de paquetes de Python.
-
-### Pasos de Instalación
-
-1. **Clonar el Repositorio**
-
+## Instalación
+1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/Suikasama123/Sell_System.git
-   cd Sell_System
+   git clone https://github.com/Suikasama123/facturacion-electronica.git
+   cd facturacion-electronica
+   ```
+2. Configurar el archivo `.env` con las credenciales de la base de datos y la configuración del entorno.
+3. Ejecutar el script de inicialización de la base de datos:
+   ```bash
+   python setup_db.py
+   ```
+4. Ejecutar la aplicación:
+   ```bash
+   python main.py
+   ```
+
+## Uso del Sistema
+1. **Emisión de Factura**: Ingrese al sistema y seleccione "Emitir Factura". Rellene los datos del cliente y el producto/servicio vendido.
+2. **Contingencia**: Si no hay conexión a Internet, la factura será registrada en modo de contingencia y sincronizada posteriormente.
+3. **Verificación**: Los clientes pueden verificar la autenticidad de las facturas escaneando el código QR incluido en las mismas.
+
+## Pruebas y Validación
+El sistema ha sido probado bajo diferentes escenarios:
+- **Pruebas Unitarias**: Verificación de cada módulo de forma independiente.
+- **Pruebas de Integración**: Asegurando la correcta interacción entre los módulos.
+- **Pruebas de Rendimiento**: Simulación de usuarios concurrentes para evaluar la capacidad del sistema.
+
+### Limitaciones Detectadas
+- **Firma Digital**: Hubo dificultades técnicas para una integración exitosa de la firma digital, por lo que se recomienda un mayor desarrollo en esta parte.
+
+## Recomendaciones
+- **Investigación de Firmas Digitales**: Se recomienda explorar opciones adicionales para la implementación de firma digital y su validación.
+- **Automatización de Notificaciones**: Implementar notificaciones push para la renovación del CUIS y CUFD.
+- **Optimizar la UX**: Mejorar la experiencia del usuario mediante pruebas de usabilidad.
+
+## Contribuciones
+Las contribuciones son bienvenidas. Por favor, abra un *issue* para discutir cualquier cambio que desee realizar. Puede contactar al autor del proyecto a través del correo asociado a este repositorio.
+
+## Licencia
+Este proyecto está licenciado bajo la **Licencia MIT**. Consulte el archivo `LICENSE` para obtener más detalles.
