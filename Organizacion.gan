@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2024-10-19" view-index="0" gantt-divider-location="351" resource-divider-location="300" version="3.3.3312" locale="es_ES">
+    <description/>
+    <view zooming-state="default:0" id="gantt-chart">
+        <field id="tpd3" name="Nombre" width="200" order="0"/>
+        <field id="tpd4" name="Fecha de inicio" width="75" order="1"/>
+        <field id="tpd5" name="Fecha de fin" width="75" order="2"/>
+        <field id="tpd15" name="Notas" width="20" order="3"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="filter.dueTodayTasks" value="false"/>
+        <option id="filter.overdueTasks" value="false"/>
+        <option id="filter.inProgressTodayTasks" value="false"/>
+        <option id="color.recent"><![CDATA[#330000 #ff3366 #6699ff #000099 #66cc00 #ff9900 #ffcc00 #003333 #ccccff #990099]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nombre" width="210" order="0"/>
+        <field id="1" name="Función" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" uid="8fe6e846254c4a1cadcf7c0f06d53a7b" name="Sell_System_Gestion" color="#cc0000" meeting="false" start="2024-10-21" duration="1" complete="0" priority="4" expand="true">
+            <notes><![CDATA[Gestion del proyecto para realizar la organizacion del proyecto]]></notes>
+            <depend id="1" type="1" difference="0" hardness="Strong"/>
+            <depend id="2" type="1" difference="0" hardness="Strong"/>
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+            <depend id="13" type="1" difference="0" hardness="Strong"/>
+            <depend id="15" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="18" uid="16068bbd959c44da8344f08548562ad6" name="Firma_Digital_En_Factura" color="#6699ff" meeting="false" start="2024-10-28" duration="1" complete="0" priority="4" expand="true">
+            <depend id="4" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="13" uid="c9d583ca48cd474595e24ed72ece71b3" name="Definicion_Objetivos" color="#003333" meeting="false" start="2024-10-21" duration="1" complete="0" expand="true"/>
+        <task id="1" uid="b6b6c130097f4811b56cbc8c0b3a21f6" name="Clases" color="#00cccc" meeting="false" start="2024-10-21" duration="1" complete="0" expand="true"/>
+        <task id="2" uid="f51da30e7d0d405589449753d2c1af53" name="Base_de_Datos" color="#00cccc" meeting="false" start="2024-10-21" duration="1" complete="0" expand="true"/>
+        <task id="3" uid="5910e0d65f904212ad89c46c55a077e8" name="Requerimientos" color="#3333ff" meeting="false" start="2024-10-22" duration="2" complete="0" expand="true">
+            <depend id="11" type="2" difference="0" hardness="Strong"/>
+            <depend id="16" type="1" difference="0" hardness="Strong"/>
+        </task>
+        <task id="11" uid="31503b0235ea4a86bc0dc128672248e0" name="Finalizacion_De_Requerimientos" color="#990099" meeting="true" start="2024-10-24" duration="0" complete="0" expand="true">
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+            <depend id="6" type="2" difference="0" hardness="Strong"/>
+            <depend id="19" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="19" uid="df343e4285124784b7d7c601b5828d6e" name="Desarrollo_Sist_Facturacion" color="#ff3366" meeting="false" start="2024-10-24" duration="1" complete="0" expand="true">
+            <depend id="14" type="2" difference="0" hardness="Strong"/>
+            <depend id="20" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="7" uid="e3f7e8aaada24281a42329d611b38a5e" name="Desarrollo_gui" color="#cccccc" meeting="false" start="2024-10-25" duration="1" complete="0" expand="true">
+            <depend id="8" type="2" difference="0" hardness="Strong"/>
+            <depend id="9" type="2" difference="0" hardness="Strong"/>
+            <depend id="10" type="2" difference="0" hardness="Strong"/>
+            <depend id="17" type="2" difference="0" hardness="Strong"/>
+            <depend id="18" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="20" uid="057d6064fdf74740837c89155c27ce7f" name="Implementacion_QR" color="#330000" meeting="false" start="2024-10-25" duration="1" complete="0" expand="true">
+            <depend id="9" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="14" uid="066b9a0a89cc46da8ff9b86fa3d47a97" name="Inicio_Desarrollo_GUI" color="#ffcc00" meeting="true" start="2024-10-25" duration="0" complete="0" expand="true">
+            <depend id="7" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="15" uid="63eb10315b4044c3906560a75bc645d9" name="Creacion_Del_Cronograma" color="#ff9900" meeting="false" start="2024-10-22" duration="1" complete="0" expand="true"/>
+        <task id="16" uid="ea06a5472fbf41c39190ff1444c63af9" name="Analisis_Facturacion" color="#66cc00" meeting="false" start="2024-10-22" duration="2" complete="0" expand="true">
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="17" uid="62c573ceee4e46c8b9ca8092a630b301" name="Preparacion_Github" color="#000099" meeting="false" start="2024-10-28" duration="1" complete="0" expand="true"/>
+        <task id="8" uid="63d509883b644883a8e7cde50cd1ce8f" name="Pruebas" color="#00cc33" meeting="false" start="2024-10-28" duration="1" complete="0" expand="true">
+            <depend id="4" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="9" uid="ae3b18755adb474ba2b352715c7f0da3" name="Pruebas_Integracion" color="#00cc99" meeting="false" start="2024-10-28" duration="1" complete="0" expand="true">
+            <depend id="4" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="10" uid="0e22eb81ad214f3e999e84790b2d4b06" name="Pruebas_Rendimiento_y_Seguridad" color="#00cc66" meeting="false" start="2024-10-28" duration="1" complete="0" expand="true">
+            <depend id="4" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="4" uid="58687d50866f4b14bc9609d0f60b27b9" name="Deadline" color="#00cc66" meeting="true" start="2024-10-29" duration="0" complete="0" expand="true"/>
+        <task id="5" uid="cca8217c3add4fadb6ce3b109af3e17e" name="Desarrollo_De_Modelos" color="#ffff33" meeting="false" start="2024-10-24" duration="1" complete="0" expand="true">
+            <depend id="14" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="6" uid="adec4061b9c8433c9d0316138c4369e6" name="Implementacion_Database" color="#00cccc" meeting="false" start="2024-10-24" duration="1" complete="0" expand="true">
+            <depend id="14" type="2" difference="0" hardness="Strong"/>
+        </task>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
